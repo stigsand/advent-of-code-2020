@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.18)
+project(AdventOfCode2020 LANGUAGES CXX)
+
+find_package(fmt 7.1 REQUIRED)
+find_package(Microsoft.GSL 3.1 REQUIRED)
+
+# Require C++17 and disable any extensions for all targets
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+enable_testing()
+
+# Day 1
+add_executable(day-01 day-01.cpp)
+target_link_libraries(day-01 PRIVATE Microsoft.GSL::Microsoft.GSL fmt::fmt)
+add_test(NAME day-01.test COMMAND day-01 WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR})
+set_tests_properties(day-01.test PROPERTIES
+    PASS_REGULAR_EXPRESSION " 692916\n.* 289270976\n")
