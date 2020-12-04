@@ -31,3 +31,10 @@ target_link_libraries(day-03 PRIVATE fmt::fmt)
 add_test(NAME day-03.test COMMAND day-03 WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR})
 set_tests_properties(day-03.test PROPERTIES
     PASS_REGULAR_EXPRESSION " 189\n.* 1718180100\n")
+
+# Day 4
+add_executable(day-04 day-04.cpp)
+target_link_libraries(day-04 PRIVATE fmt::fmt)
+add_test(NAME day-04.test COMMAND day-04 WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR})
+set_tests_properties(day-04.test PROPERTIES
+    PASS_REGULAR_EXPRESSION " 260\n.* 153\n")
