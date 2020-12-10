@@ -66,3 +66,10 @@ target_link_libraries(day-08 PRIVATE fmt::fmt)
 add_test(NAME day-08.test COMMAND day-08 WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR})
 set_tests_properties(day-08.test PROPERTIES
     PASS_REGULAR_EXPRESSION " 1594\n.* 758\n")
+
+# Day 9
+add_executable(day-09 day-09.cpp)
+target_link_libraries(day-09 PRIVATE Microsoft.GSL::Microsoft.GSL fmt::fmt)
+add_test(NAME day-09.test COMMAND day-09 WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR})
+set_tests_properties(day-09.test PROPERTIES
+    PASS_REGULAR_EXPRESSION " 1492208709\n.* 238243506\n")
